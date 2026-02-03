@@ -1,183 +1,206 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Kochanie… 🐶💖</title>
+<meta charset="UTF-8">
+<title>Kochanie… 🐶💖</title>
 
-    <!-- MOBILE / ANDROID -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#ff8fab">
-    <meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#ff8fab">
+<meta name="mobile-web-app-capable" content="yes">
 
-    <style>
-        body {
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Comic Sans MS', Arial, sans-serif;
-            background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
-            overflow: hidden;
-        }
+<style>
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', Arial;
+    background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+    overflow: hidden;
+}
 
-        body.heartbeat {
-            animation: pulseBg 1.2s ease-in-out infinite;
-        }
+body.heartbeat {
+    animation: pulseBg 1.2s ease-in-out infinite;
+}
 
-        @keyframes pulseBg {
-            0% { background: linear-gradient(135deg, #ffd1dc, #ffb6c1); }
-            50% { background: linear-gradient(135deg, #ffb6c1, #ff8fab); }
-            100% { background: linear-gradient(135deg, #ffd1dc, #ffb6c1); }
-        }
+@keyframes pulseBg {
+    0% { background: linear-gradient(135deg, #ffd1dc, #ffb6c1); }
+    50% { background: linear-gradient(135deg, #ffb6c1, #ff8fab); }
+    100% { background: linear-gradient(135deg, #ffd1dc, #ffb6c1); }
+}
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-            max-width: 420px;
-            width: 90%;
-            z-index: 2;
-        }
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    max-width: 420px;
+    width: 90%;
+    z-index: 2;
+}
 
-        button {
-            font-size: 22px;
-            padding: 18px 0;
-            border-radius: 20px;
-            border: none;
-            margin: 12px 0;
-            width: 100%;
-            max-width: 280px;
-            cursor: pointer;
-        }
+button {
+    font-size: 22px;
+    padding: 18px 0;
+    border-radius: 20px;
+    border: none;
+    margin: 12px 0;
+    width: 100%;
+    max-width: 280px;
+    cursor: pointer;
+}
 
-        #yes {
-            background-color: #ff4f81;
-            color: white;
-        }
+#yes {
+    background-color: #ff4f81;
+    color: white;
+}
 
-        #no {
-            background-color: #777;
-            color: white;
-            position: absolute;
-        }
+#no {
+    background-color: #777;
+    color: white;
+}
 
-        .counter {
-            font-size: 14px;
-            color: #666;
-            margin-top: 10px;
-        }
+.counter {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
 
-        .dog {
-            position: fixed;
-            top: -50px;
-            font-size: 32px;
-            animation: fall linear forwards;
-            pointer-events: none;
-        }
+.dog {
+    position: fixed;
+    top: -50px;
+    font-size: 32px;
+    animation: fall linear forwards;
+    pointer-events: none;
+}
 
-        @keyframes fall {
-            to { transform: translateY(110vh); }
-        }
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
 
-        .pulse-text {
-            animation: pulseText 1.2s ease-in-out infinite;
-        }
+.pulse-text {
+    animation: pulseText 1.2s ease-in-out infinite;
+}
 
-        @keyframes pulseText {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-    </style>
+@keyframes pulseText {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
-    <h1>Kochanie… 💕</h1>
-    <p>
-        Czy zostaniesz moją Walentynką? 💖<br><br>
-        🐾 przytulasy bez limitu<br>
-        💗 dużo emocji dla mojej naj najmądrzejszej wybranki<br>
-        🐶 Pimpuś tez prosi
-    </p>
+<h1>Kochanie… 💕</h1>
 
-    <button id="yes">TAK 🥰🐶</button>
-    <button id="no">NIE 🙈</button>
+<p>
+Czy zostaniesz moją Walentynką? 💖<br><br>
+🐾 Przytulasy bez limitu<br>
+💗 Dużo emocji dla mojej naj najmądrzejszej wybranki<br>
+🐶 Pimpuś też prosi
+</p>
 
-    <div class="counter">
-        Próby kliknięcia „NIE”: <span id="count">0</span>
-    </div>
+<button id="yes">TAK 🥰🐶</button>
+<button id="no">NIE 🙈</button>
+
+<div class="counter">
+Próby kliknięcia „NIE”: <span id="count">0</span>
+</div>
 </div>
 
 <script>
-    const noButton = document.getElementById("no");
-    const yesButton = document.getElementById("yes");
-    const countSpan = document.getElementById("count");
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const countSpan = document.getElementById("count");
 
-    let attempts = 0;
+let attempts = 0;
+let escaped = false;
 
-    const texts = [
-        "Kochanie… 🥺",
-        "Pimpek patrzy 🐶💔",
-        "Serio NIE? 😭",
-        "On się smuci 🐾",
-        "Nie rób tak… 🥹"
-    ];
+const texts = [
+"Kochanie… 🥺",
+"Pimpuś patrzy 🐶💔",
+"Serio NIE? 😭",
+"Pimpuś się teraz smuci... 🐾",
+"Nie rób tak… 🥹"
+];
 
-    function moveNo() {
-        if (navigator.vibrate) navigator.vibrate(40);
+function moveNo() {
 
-        attempts++;
-        countSpan.textContent = attempts;
+    if (!escaped) {
+        const rect = noButton.getBoundingClientRect();
 
-        const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-        const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.position = "absolute";
+        noButton.style.left = rect.left + "px";
+        noButton.style.top = rect.top + "px";
 
-        noButton.style.left = x + "px";
-        noButton.style.top = y + "px";
-        noButton.textContent = texts[Math.floor(Math.random() * texts.length)];
+        escaped = true;
     }
 
-    noButton.addEventListener("touchstart", moveNo);
-    noButton.addEventListener("mouseover", moveNo);
+    if (navigator.vibrate) navigator.vibrate(40);
 
-    function heartbeat() {
-        if (navigator.vibrate) {
-            navigator.vibrate([120,80,120,300,120,80,120,500]);
-        }
-        document.body.classList.add("heartbeat");
-        setTimeout(() => document.body.classList.remove("heartbeat"), 6000);
+    attempts++;
+    countSpan.textContent = attempts;
+
+    const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
+
+    noButton.textContent = texts[Math.floor(Math.random() * texts.length)];
+}
+
+noButton.addEventListener("touchstart", moveNo);
+noButton.addEventListener("mouseover", moveNo);
+
+function heartbeat() {
+    if (navigator.vibrate) {
+        navigator.vibrate([120,80,120,300,120,80,120,500]);
     }
 
-    function startDogRain() {
-        setInterval(() => {
-            const dog = document.createElement("div");
-            dog.className = "dog";
-            dog.textContent = Math.random() > 0.5 ? "🐶" : "🐕‍🦺";
-            dog.style.left = Math.random() * 100 + "vw";
-            dog.style.animationDuration = (2 + Math.random() * 3) + "s";
-            document.body.appendChild(dog);
-            setTimeout(() => dog.remove(), 5000);
-        }, 300);
-    }
+    document.body.classList.add("heartbeat");
 
-    yesButton.addEventListener("click", () => {
-        heartbeat();
-        startDogRain();
+    setTimeout(() => {
+        document.body.classList.remove("heartbeat");
+    }, 6000);
+}
 
-        document.querySelector(".card").innerHTML = `
-            <h1 class="pulse-text">💖 KOCHANIE!!! 💖</h1>
-            <h2 class="pulse-text">Moje serce bije tylko dla Ciebie 💓</h2>
-            <p>
-                🐶 Teraz Pimpuś oszalał ze szczęścia<br><br>
-                💗 Próby „NIE”: <strong>${attempts}</strong><br><br>
-                📳 Jeśli to czujesz — to moje serce
-            </p>
-        `;
-    });
+function startDogRain() {
+    setInterval(() => {
+
+        const dog = document.createElement("div");
+        dog.className = "dog";
+        dog.textContent = Math.random() > 0.5 ? "🐶" : "🐕‍🦺";
+
+        dog.style.left = Math.random() * 100 + "vw";
+        dog.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(dog);
+
+        setTimeout(() => dog.remove(), 5000);
+
+    }, 300);
+}
+
+yesButton.addEventListener("click", () => {
+
+    heartbeat();
+    startDogRain();
+
+    document.querySelector(".card").innerHTML = `
+        <h1 class="pulse-text">💖 KOCHANIE!!! 💖</h1>
+        <h2 class="pulse-text">Moje serce bije tylko dla Ciebie 💓</h2>
+        <p>
+        🐶 No i Pimpuś oszalał ze szczęścia<br><br>
+        💗 Próby „NIE”: <strong>${attempts}</strong><br><br>
+        📳 Jeśli to czujesz — to moje serce
+        </p>
+    `;
+});
 </script>
 
 </body>
